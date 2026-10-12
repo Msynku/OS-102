@@ -1,0 +1,17 @@
+set pagination off
+set confirm off
+file bin/kernel
+set arch riscv:rv64
+target remote localhost:1234
+echo \n=== 复位后初始 PC ===\n
+info registers pc
+break *0x80000000
+break *0x80200000
+echo \n=== continue 到 OpenSBI 入口 0x80000000 ===\n
+continue
+info registers pc
+echo \n=== continue 到内核入口 0x80200000 ===\n
+continue
+info registers pc sp a0 a1
+echo \n=== 反汇编内核入口 (kern_entry) ===\n
+x/6i $pc
