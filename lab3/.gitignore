@@ -1,0 +1,6 @@
+/obj/
+/bin/
+/.gdb.in
+/.qemu*.out
+/projlab3-handin.tar.gz
+__pycache__/
