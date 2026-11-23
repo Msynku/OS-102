@@ -1,0 +1,17 @@
+# 构建产物
+obj/
+bin/
+
+# 编译中间文件
+*.o
+*.d
+
+# 内核二进制
+kernel
+ucore.img
+
+# 调试日志 / 临时文件
+*.log
+*.pid
+gdb_*
+qemu_*
